@@ -3,18 +3,23 @@
 import java.util.Scanner;
 
 public class Exercicio32 {
-    public static int somar (int numero){
-        if(numero == 0) return 0;
-        return numero+somar(numero-1);
+    public static int somar(int numero) {
+        if (numero == 0) return 0;
+        return numero + somar(numero - 1);
     }
     
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in); 
 
-		System.out.print("Informe um número: ");
+		System.out.print("Informe um número inteiro positivo: ");
 		int num = input.nextInt();
 		
-		System.out.println("O somatório de 1 a " + num + somar(num));
+		if (num < 0) {
+			System.out.println("Número inválido! Digite um número positivo.");
+		} else {
+			int resultado = somar(num);
+			System.out.println("O somatório de 1 a " + num + " é: " + resultado);
+		}
 		
 		input.close();
 	}

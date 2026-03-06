@@ -3,9 +3,9 @@
 import java.util.Scanner;
 
 public class Exercicio30 {
-	    public static int fatorial (int numero){
-        if(numero == 1) return 1;
-        return numero*fatorial(numero-1);
+	    public static int fatorial(int numero) {
+        if (numero == 0 || numero == 1) return 1;
+        return numero * fatorial(numero - 1);
     }
     
 	public static void main(String[] args) {
@@ -14,7 +14,11 @@ public class Exercicio30 {
 		System.out.print("Informe um número: ");
 		int num = input.nextInt();
 		
-		System.out.println("O fatorial de " + num + "é: " +fatorial(num));
+		if (num < 0) {
+			System.out.println("Não é possível calcular fatorial de número negativo!");
+		} else {
+			System.out.println("O fatorial de " + num + " é: " + fatorial(num));
+		}
 		
 		input.close();
 	}

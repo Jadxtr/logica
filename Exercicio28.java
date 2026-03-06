@@ -9,7 +9,26 @@ public class Exercicio28 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		
-		 //escreva seu código aqui
+		System.out.print("Digite o primeiro ângulo: ");
+		double angulo1 = input.nextDouble();
+		
+		System.out.print("Digite o segundo ângulo: ");
+		double angulo2 = input.nextDouble();
+		
+		System.out.print("Digite o terceiro ângulo: ");
+		double angulo3 = input.nextDouble();
+		
+		double soma = angulo1 + angulo2 + angulo3;
+		
+		if (soma != 180) {
+			System.out.println("Não é um triângulo válido! A soma dos ângulos deve ser 180°");
+		} else if (angulo1 == 90 || angulo2 == 90 || angulo3 == 90) {
+			System.out.println("Triângulo Retângulo");
+		} else if (angulo1 > 90 || angulo2 > 90 || angulo3 > 90) {
+			System.out.println("Triângulo Obtusângulo");
+		} else {
+			System.out.println("Triângulo Acutângulo");
+		}
 		
 		input.close();
 	}

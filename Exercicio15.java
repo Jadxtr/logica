@@ -8,7 +8,28 @@ public class Exercicio15 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in); 
 
-		//escreva seu código aqui
+		System.out.print("Digite o salário bruto: ");
+		double salarioBruto = input.nextDouble();
+		
+		double gratificacao;
+		
+		if (salarioBruto <= 350) {
+			gratificacao = 100;
+		} else if (salarioBruto <= 600) {
+			gratificacao = 75;
+		} else if (salarioBruto <= 900) {
+			gratificacao = 50;
+		} else {
+			gratificacao = 35;
+		}
+		
+		double imposto = salarioBruto * 0.07;
+		double valorAReceber = salarioBruto + gratificacao - imposto;
+		
+		System.out.printf("\nSalário bruto: R$ %.2f\n", salarioBruto);
+		System.out.printf("Gratificação: R$ %.2f\n", gratificacao);
+		System.out.printf("Imposto (7%%): R$ %.2f\n", imposto);
+		System.out.printf("Valor a receber: R$ %.2f\n", valorAReceber);
 		
 		input.close();
 	}

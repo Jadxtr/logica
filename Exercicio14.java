@@ -10,7 +10,43 @@ public class Exercicio14 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in); 
 
-		//escreva seu código aqui
+		System.out.print("Digite a idade: ");
+		int idade = input.nextInt();
+		
+		System.out.print("Digite o peso (kg): ");
+		double peso = input.nextDouble();
+		
+		int risco;
+		
+		if (idade < 20) {
+			if (peso <= 60) {
+				risco = 9;
+			} else if (peso <= 90) {
+				risco = 8;
+			} else {
+				risco = 7;
+			}
+		} else if (idade <= 50) {
+			if (peso <= 60) {
+				risco = 6;
+			} else if (peso <= 90) {
+				risco = 5;
+			} else {
+				risco = 4;
+			}
+		} else {
+			if (peso <= 60) {
+				risco = 3;
+			} else if (peso <= 90) {
+				risco = 2;
+			} else {
+				risco = 1;
+			}
+		}
+		
+		System.out.printf("\nIdade: %d anos\n", idade);
+		System.out.printf("Peso: %.2f kg\n", peso);
+		System.out.println("Grupo de risco: " + risco);
 		
 		input.close();
 	}

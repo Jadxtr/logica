@@ -6,7 +6,12 @@ public class Exercicio3 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		
-		 //escreva seu código aqui
+		System.out.print("Digite um número: ");
+		int numero = input.nextInt();
+		
+		if (numero > 20) {
+			System.out.println(numero);
+		}
 
 		input.close();
 	}

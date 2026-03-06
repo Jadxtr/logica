@@ -6,7 +6,14 @@ public class Exercicio29 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in); 
 
-		//escreva seu código aqui
+		System.out.print("Digite um número: ");
+		int numero = input.nextInt();
+		
+		if (numero % 3 == 0) {
+			System.out.println(numero + " é múltiplo de 3");
+		} else {
+			System.out.println(numero + " não é múltiplo de 3");
+		}
 		
 		input.close();
 	}

@@ -58,11 +58,50 @@ public class Exercicio18 {
 					System.out.println("Categoria inválida"); }
 			}
 			
-			
+			System.out.print("Número de horas trabalhadas no mês: ");
+			horasTrabalhadas = input.nextInt();
 			
 			double salarioMinimo = 450.00;
 			
-			 //escreva seu código aqui
+			// Cálculo do valor da hora trabalhada
+			if (categoria == 'G') {
+				if (turno == 'N') {
+					valorHora = salarioMinimo * 0.18;
+				} else {
+					valorHora = salarioMinimo * 0.15;
+				}
+			} else { // categoria == 'O'
+				if (turno == 'N') {
+					valorHora = salarioMinimo * 0.13;
+				} else {
+					valorHora = salarioMinimo * 0.10;
+				}
+			}
+			
+			// Cálculo do salário inicial
+			salarioInicial = horasTrabalhadas * valorHora;
+			
+			// Cálculo do auxílio-alimentação
+			if (salarioInicial <= 300) {
+				auxilioAlimentacao = salarioInicial * 0.20;
+			} else if (salarioInicial <= 600) {
+				auxilioAlimentacao = salarioInicial * 0.15;
+			} else {
+				auxilioAlimentacao = salarioInicial * 0.05;
+			}
+			
+			// Cálculo do salário final
+			double salarioFinal = salarioInicial + auxilioAlimentacao;
+			
+			// Exibição dos dados
+			System.out.println("\n========== FOLHA DE PAGAMENTO ==========");
+			System.out.printf("Código do funcionário: %d\n", codigo);
+			System.out.printf("Horas trabalhadas: %d horas\n", horasTrabalhadas);
+			System.out.printf("Valor da hora trabalhada: R$ %.2f\n", valorHora);
+			System.out.printf("Salário inicial: R$ %.2f\n", salarioInicial);
+			System.out.printf("Auxílio-alimentação: R$ %.2f\n", auxilioAlimentacao);
+			System.out.printf("Salário final: R$ %.2f\n", salarioFinal);
+			System.out.println("========================================\n");
 		}
 
 		input.close();

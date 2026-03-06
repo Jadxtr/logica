@@ -15,8 +15,26 @@ public class Exercicio1 {
 		 System.out.print("Digite o segundo número:" );   
 		 y = input.nextInt();   
 		 
-		 //escreva seu código aqui
-
+		 //escreva seu código aqui	 	 
+		 
+		 soma = x + y;
+	 	 subt = x - y;
+	 	 mult = x * y;
+	 	 // tratar divisão por zero
+	 	 if (y != 0) {
+	 	 	 div = x / y;
+	 	 } else {
+	 	 	 div = 0; // ou poderia lançar erro/aviso
+	 	 }
+	 	 
+	 	 System.out.println("Soma: " + soma);
+	 	 System.out.println("Subtração: " + subt);
+	 	 System.out.println("Multiplicação: " + mult);
+	 	 if (y != 0) {
+	 	 	 System.out.println("Divisão: " + div);
+	 	 } else {
+	 	 	 System.out.println("Divisão: impossível (divisor zero)");
+	 	 }
 		 input.close();
 	}
 }
